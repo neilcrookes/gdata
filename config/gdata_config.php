@@ -4,13 +4,23 @@
  */
 class GDATA_CONFIG {
 
-  var $analytics = array(
-	  'datasource' => 'gdata',
-	  'driver' => 'analytics',
-    'email' => '',
-    'passwd' => '',
-	  'profileId' => '',
-	  'source' => 'CakePHP',
+	var $analytics = array(
+		'datasource' => 'gdata',
+		'driver' => 'analytics',
+		'email' => '',
+		'passwd' => '',
+		'profileId' => '',
+		'source' => 'CakePHP',
+	);
+	
+	var $picasa = array(
+		'datasource' => 'gdata',
+		'driver' => 'picasa',
+		'email' => '',
+		'passwd' => '',
+		'source' => 'CakePHP',
+		'cache' => true,
+		'cacheDuration' => '+1 hours'
 	);
 
 }

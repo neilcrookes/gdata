@@ -87,16 +87,16 @@ class RestSource extends DataSource {
     if ($this->Http->response['status']['code'] != 200) {
       return false;
     }
-
     // Get content type header
     $contentType = $this->Http->response['header']['Content-Type'];
 
     // Extract content type from content type header
-    if (preg_match('/^([a-z0-9\/\+]+);\s*charset=([a-z0-9\-]+)$/i', $contentType, $matches)) {
+    if (preg_match('/^([a-z0-9\/\+]+);\s*charset=([a-z0-9\-]+)(.*)$/i', $contentType, $matches)) {
       $contentType = $matches[1];
       $charset = $matches[2];
+      //$extra = $matches[3];
     }
-
+    
     // Decode response according to content type and return an array
     switch ($contentType) {
     	case 'application/atom+xml':
