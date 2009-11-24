@@ -18,6 +18,13 @@ class GdataSource extends RestSource {
   protected $_auth = false;
 
   /**
+   * The URI of the Client Login.
+   *
+   * @var string
+   */
+  protected $_clientLoginUri = 'https://www.google.com/accounts/ClientLogin';
+
+  /**
    * Logs in to Google using the email, password and source values set in the
    * data source config.
    *
@@ -29,7 +36,7 @@ class GdataSource extends RestSource {
 
     // Construct the google login request
     $request = array(
-      'uri' => 'https://www.google.com/accounts/ClientLogin',
+      'uri' => $this->_clientLoginUri,
       'method' => 'POST',
       'body' => array(
         'accountType' => 'HOSTED_OR_GOOGLE',
