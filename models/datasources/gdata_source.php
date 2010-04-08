@@ -55,6 +55,7 @@ class GdataSource extends RestSource {
 
     // Check we have the Auth part of the response
     if (!is_string($response['Auth'])) {
+    	trigger_error("Request to Google for Authentication failed.", ERROR_WARN);
       return false;
     }
 

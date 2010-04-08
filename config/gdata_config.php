@@ -20,6 +20,16 @@ class GDATA_CONFIG {
     'passwd' => '',
     'source' => 'CakePHP',
   );
+	
+	var $picasa = array(
+		'datasource' => 'gdata',
+		'driver' => 'picasa',
+		'email' => '',
+		'passwd' => '',
+		'source' => 'CakePHP',
+		'cache' => true,
+		'cacheDuration' => '+1 hours'
+	);
 
 }
 ?>
